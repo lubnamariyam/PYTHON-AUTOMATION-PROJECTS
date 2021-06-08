@@ -2,13 +2,16 @@ import pandas as pd
 import smtplib
 import xlrd
 
+#add your email
 my_email = "xyz@gmail.com"
 my_password = "abcdefghi"
 
+#google smtp server
 server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
 server.ehlo()
 server.login(my_email,my_password)
 
+#path to your excel file with data   excel file should consists of heading "Name","Email"
 email_list = pd.read_excel(r'C:\Users\HP\Desktop\emaildata2.xls')
 
 names = email_list['Name']
